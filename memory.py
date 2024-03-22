@@ -11,11 +11,18 @@ Exercises:
 
 from random import *
 from turtle import *
+import string
+import random
 
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+
+tiles = list()
+for i in range(32):
+    tiles.append(string.ascii_letters[i])
+    tiles.append(string.ascii_letters[i])
+    
 state = {'mark': None}
 hide = [True] * 64
 score = {"Taps": 0}
@@ -85,9 +92,9 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        goto(x+26, y)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles[mark], font=('Arial', 30, 'normal'), align = "center")
 
     update()
     ontimer(draw, 100)

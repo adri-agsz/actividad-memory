@@ -22,7 +22,7 @@ tiles = list()
 for i in range(32):
     tiles.append(string.ascii_letters[i])
     tiles.append(string.ascii_letters[i])
-    print(string.ascii_letters[i])
+    
 state = {'mark': None}
 hide = [True] * 64
 score = {"Taps": 0}
